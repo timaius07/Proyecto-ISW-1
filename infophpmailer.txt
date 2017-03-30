@@ -8,3 +8,4 @@ https://microbuffer.wordpress.com/2013/01/15/enviar-correo-con-phpmailer-y-gmail
 
 EStp es paypal
 http://ovedfs.com/07-implementar-pagos-con-paypal-taller-de-desarrollo-de-una-tienda-en-linea/
+http://blog.openalfa.com/como-implementar-el-pago-por-paypal-en-un-sitio-web
