@@ -5,3 +5,6 @@ http://www.forosdelweb.com/f18/como-configurar-phpmailer-para-enviar-mensaje-con
 https://huguidugui.wordpress.com/2014/08/04/enviar-mail-con-phpmailer-desde-localhost/
 http://www.jc-mouse.net/php/envio-de-correo-gmail-con-phpmailer
 https://microbuffer.wordpress.com/2013/01/15/enviar-correo-con-phpmailer-y-gmail/
+
+EStp es paypal
+http://ovedfs.com/07-implementar-pagos-con-paypal-taller-de-desarrollo-de-una-tienda-en-linea/
