@@ -8,20 +8,12 @@
 			<div class="col-xs-8">
 				<ul id ="main-menu" class="nav nav-pills hidden-xs">
 				  <li class="active"><a href="index.php">Inicio</a></li>
-				  <li class=""><a href="nosotros.php">Nuestra Empresa</a></li>
-				  <li class="dropdown">
-				  		<a class="dropdown-toggle" data-toggle="dropdown">Repuestos
-				  		<span class="caret"></span></a>
-				  		<ul class="dropdown-menu" role="menu">
-				  			<li><a href="detalles.php">Autos</a></li>
-				  			<li><a href="detalles.php">Camiones</a></li>
-				  			<li><a href="detalles.php">Motos</a></li>
-				  		</ul>
-				  </li>
-				  <li><a href="Z">Contactenos</a></li>
+				  <li><a href="nosotros.php">Nuestra Empresa</a></li>
+				  <li><a href="detalles.php">Repuestos</a></li>	
+				  <li><a href="contacto.php">Contactenos</a></li>
 				  <li><a href="sucursales.php">Sucursales</a></li>
-				  <li><a href="loggin.php">Iniciar Sessión</a></li>	
+				  <li><a href="#">Cerrar Sessión</a></li>	
 				</ul>
 			</div>
 		</div>	
-</header>		
+	</header>		

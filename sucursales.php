@@ -7,7 +7,7 @@
 	</head>
 
 	<body>
-		<?php include 'inc/header.php'; ?>
+		<?php include 'inc/headerinicio.php'; ?>
 		<!--detail cambia los estilos workshop w1 cambia todo-->
 		<header>
 			<!--Cabecera de la pagina repuesto, imagen de menu-->

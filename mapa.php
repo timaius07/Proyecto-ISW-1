@@ -10,7 +10,7 @@
 		<?php include 'inc/head_common.php' ; ?>
 		<title>Repuestos</title>
 	</head>
-	<?php include 'inc/header.php'; ?>	
+	<?php include 'inc/headerinicio.php'; ?>	
 	 <body onload="initMap();">
 		
 

@@ -7,7 +7,7 @@
 	</head>
 
 	<body>
-		<?php include 'inc/header.php'; ?>
+		<?php include 'inc/headerinicio.php'; ?>
 		<!--detail cambia los estilos workshop w1 cambia todo-->
 		<article id="w1-detail" class="detail">
 				<header>
