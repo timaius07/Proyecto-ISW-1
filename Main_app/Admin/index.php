@@ -8,7 +8,7 @@
 		<title>Repuestos Adm</title>
 	</head>
 	<body>
-		<?php include '../../inc/header.php'; ?>	
+		<?php include '../../inc/headeradmin.php'; ?>	
 		<div id ="workshop-list">
 			<article id="w1" class="workshop workshop-left">
 				<div class="container">

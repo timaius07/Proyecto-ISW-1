@@ -46,6 +46,7 @@
 											    <th>EXISTENCIA:</th>
 											    <th>FOTO</th>
 											    <th>DEPARTAMENTO</th>
+											    <th>SUCURSAL</th>
 											    <th colspan="2">MANTENIMIENTO</th>
 											  </tr>
 										</thead>
@@ -64,8 +65,9 @@
 											 		<td><?php echo $row['existencia']; ?></td>
 											 		<td><img height="70px" src="data:image/jpg;base64, <?php echo base64_encode($row['imagen']); ?>"/></td>
 											 		<td><?php echo $row['departamento']; ?></td>
-											 		<th><a href="candidatomodificar.php?id=<?php echo $row ['id'];?>" class="btn btn-primary" role="button">Modificar</a></th>
-											 		<th><a href="eliminar_candidato.php ?id=<?php echo $row ['id'];?>" class="btn btn-primary" role="button">Eliminar</a></th>
+											 		<td><?php echo $row['sucursal']; ?></td>
+											 		<th><a href="articulomodifica.php?id=<?php echo $row ['id'];?>" class="btn btn-primary" role="button">Modificar</a></th>
+											 		<th><a href="procesoeliminar.php?id=<?php echo $row ['id'];?>" class="btn btn-primary" role="button">Eliminar</a></th>
 											 	</tr>
 											 <?php
 												 }

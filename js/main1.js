@@ -16,9 +16,11 @@ jQuery(document).on('submit','#formlg',function(event){
 		if (!respuesta.error){
 			if (respuesta.tipo == 'Administrador') {
 				location.href= 'Main_app/Admin/';
+				session_start();
 
 			}else if (respuesta.tipo == 'Cliente') {
 				location.href= 'Main_app/Usuario/';
+				session_start();
 			}
 		}else{
 			$('.error').slideDown('slow');

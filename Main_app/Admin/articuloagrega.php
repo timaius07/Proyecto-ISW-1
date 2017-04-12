@@ -5,14 +5,14 @@
   <title>Mantenimiento Articulos</title>
   <?php include '../../inc/head_common.php' ; ?>
 
- <link rel="stylesheet" href="../../css/main.css">
+ <link rel="stylesheet" href="../../css/mainarticulos.css">
  <link rel="stylesheet" href="../../css/workshops2.css">
  <link rel="stylesheet" href="../../css/style.css">
  
   <title>Agregar Artículo</title>
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans:600'>
 </head>
-<?php include '../../inc/header.php'; ?>
+<?php include '../../inc/headeradmin.php'; ?>
 
 	<div id ="workshop-list">
 			<article id="w1" class="workshop workshop-left">
@@ -34,6 +34,8 @@
 				               <input name="precio" type="text" class="form-control" placeholder="Precio" value="" required/>
 				               <label class="label">Existencia</label>
 				               <input name="exist" type="text" class="form-control" placeholder="Existencia" value="" required/>
+				               <label for="pass" class="label">Foto de Artículo</label>
+				               <input type="file" name="Imagen" required="Falta Imagen" />
 				               <div class="group">
 									<label for="tipo" class="label">Departamento</label>
 									<br>
@@ -43,9 +45,19 @@
  										<option>Motocicletas</option>
  									</select>
 								</div>
-				               <label for="pass" class="label">Foto de Artículo</label>
-				               <input type="file" name="Imagen" required="Falta Imagen" />
-				               <br>
+									
+								<div class="group">
+									<label for="tipo" class="label">Sucursal</label>
+									<br>
+									<select class="input" type="button" name="sucs">
+ 										<option>San_José</option>
+ 										<option>San_Carlos</option>
+ 										<option>Guápiles</option>
+ 										<option>Puntarenas</option>
+ 										<option>Liberia</option>										
+ 									</select>
+								</div>
+								<br>
 				               <input type="submit" class="button" value="Guardar">
 		   					 </form>
 						</div>		

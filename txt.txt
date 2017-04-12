@@ -1,0 +1,24 @@
+Select 
+https://www.jose-aguilar.com/blog/seleccionar-una-opcion-por-defecto-de-un-select-con-jquery/
+http://stackoverflow.com/questions/13343566/set-select-option-selected-by-value
+
+
+
+reportes pdf
+http://anexsoft.com/p/62/exportar-html-a-pdf-en-php-de-manera-facil
+https://www.jose-aguilar.com/blog/generar-archivo-pdf-con-contenido-html/
+http://www.hnevado.es/blog/exportar-datos-dompdf/
+http://blog.unijimpe.net/generar-pdf-con-php-y-mysql/
+http://www.codedrinks.com/crear-un-reporte-con-fpdf-usando-php-y-mysql/
+http://puraslineas.com/2013/07/15/crear-pdf-desde-php-haciendo-una-consulta-a-mysql/
+
+formato moneda
+https://rubenlacasa.es/2012/01/11/formato-moneda-con-php-php-tips/
+http://php.net/manual/es/function.money-format.php
+http://www.anerbarrena.com/php-money_format-5261/
+
+
+mapa en modal
+http://stackoverflow.com/questions/11742839/showing-a-google-map-in-a-modal-created-with-twitter-bootstrap
+
+
