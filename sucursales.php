@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Sucursales</title>
 		<?php include 'inc/head_common.php';?>
+		<link rel="stylesheet" href="./css/style.css">
 	</head>
 
 	<body>

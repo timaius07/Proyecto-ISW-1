@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>Detalles</title>
 		<?php include 'inc/head_common.php';?>
+		<link rel="stylesheet" href="./css/style.css">
 	</head>
 
 	<body>

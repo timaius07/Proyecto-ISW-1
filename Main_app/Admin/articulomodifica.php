@@ -43,10 +43,10 @@
 						       <input name="codigo" type="text" class="form-control" placeholder="Código del Artículo" value="<?php echo $row['codigo'];?>" required/>
 				               <label type="text" class="label">Descripción</label>
 				               <input name="descrp" type="text" class="form-control" placeholder="Descripción" value="<?php echo $row['descripcion'];?>" required/>
-				               <label type="text" class="label"">Precio</label>
-				               <input name="precio" type="text" class="form-control" placeholder="Precio" value="<?php echo $row['precio'];?>" required/>
-				               <label type="text" class="label"">Existencia</label>
-				               <input name="exist" type="text" class="form-control" placeholder="Existencia" value="<?php echo $row['existencia'];?>" required/>
+				               <label type="text" class="label">Precio</label>
+				               <input name="precio" type="text" class="form-control" onkeypress="return valida(event)" placeholder="Precio" value="<?php echo $row['precio'];?>" required/>
+				               <label type="text" class="label">Existencia</label>
+				               <input name="exist" type="text" class="form-control" onkeypress="return valida(event)" placeholder="Existencia" value="<?php echo $row['existencia'];?>" required/>
 				               <label type="text" class="label"">Foto de Artículo</label>
 				               <img height="70px" src="data:image/jpg;base64, <?php echo base64_encode($row['imagen']);  ?>"/>
 										<input type="file" name="Imagen" required="Falta Imagen" />
@@ -84,7 +84,7 @@
 				</div>
 			</article>
 	</div>
-  
+  <script src="./js/valida.js"></script>
   <?php include '../../inc/footerua.php';?>
   <?php include '../../inc/footer_common.php';?>
 </body>

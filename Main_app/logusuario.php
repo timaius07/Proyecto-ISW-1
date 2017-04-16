@@ -1,9 +1,9 @@
 <?php 
 require 'conexion.php' ;
 
-$usuarios = $mysqli->query("SELECT nombreu, tipousuario 
+$usuarios = $mysqli->query("SELECT correou, tipousuario, nombreu 
 		  FROM login
-		  WHERE nombreu  = '".$_POST['usuariolg']."' 
+		  WHERE correou  = '".$_POST['usuariolg']."' 
 		  AND contrasenau  = '".$_POST['passlg']."'");
 
 if ($usuarios->num_rows == 1){ 

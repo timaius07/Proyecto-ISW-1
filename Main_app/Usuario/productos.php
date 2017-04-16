@@ -9,7 +9,7 @@
 	</head>
 
 	<body>
-		<?php include '../../inc/headeradmin.php'; ?>
+		<?php include '../../inc/header.php'; ?>
 		<!--detail cambia los estilos workshop w1 cambia todo-->
 		
 		<link rel="stylesheet" href="../../css/workshops2.css">
@@ -34,11 +34,6 @@
 									<div class="col-xs-12">									
 										<table class="table table-bordered">
 										<thead>
-											<tr>
-												<td >
-													<a href="articuloagrega.php" class="btn btn-primary" role="button">Agregar Artículos</a>				
-												</td>
-											</tr>
 											 <tr>
 											    <th>CÓDIGO:</th>
 											    <th>DESCRICIÓN:</th> 
@@ -47,7 +42,7 @@
 											    <th>FOTO</th>
 											    <th>DEPARTAMENTO</th>
 											    <th>SUCURSAL</th>
-											    <th colspan="2">MANTENIMIENTO</th>
+											    <th>AÑADIR AL CARRITO</th>
 											  </tr>
 										</thead>
 										<tbody>
@@ -65,9 +60,9 @@
 											 		<td><?php echo $row['existencia']; ?></td>
 											 		<td><img height="70px" src="data:image/jpg;base64, <?php echo base64_encode($row['imagen']); ?>"/></td>
 											 		<td><?php echo $row['departamento']; ?></td>
-											 		<td><?php echo $row['sucursal']; ?></td>
-											 		<th><a href="articulomodifica.php?id=<?php echo $row ['id'];?>" class="btn btn-primary" role="button">Modificar</a></th>
-											 		<th><a href="procesoeliminar.php?id=<?php echo $row ['id'];?>" class="btn btn-primary" role="button">Eliminar</a></th>
+											 		<th><?php echo $row['sucursal']; ?></td>
+											 		<th><a href="carrito.php?id=<?php echo $row ['id'];?>"><img src="../../img/carritorep.jpg"></a></th>
+											 		
 											 	</tr>
 											 <?php
 												 }

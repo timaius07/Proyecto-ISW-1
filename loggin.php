@@ -6,7 +6,7 @@
 
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/workshops2.css">
- <link rel="stylesheet" href="./css/main.css">
+ <link rel="stylesheet" href="./css/mainarticulos.css">
   <title>Inicio de Sessión</title>
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans:600'>
 </head>
@@ -27,15 +27,15 @@
 							<form action='grdCliente.php' id="formlg" method="POST" enctype="multipart/form-data">
 							<div class="sign-up-htm">
 								<div class="group">
-									<label for="user" class="label">Nombre de Usuario</label>
+									<label type="text" class="label">Nombre de Usuario</label>
 									<input id="user" type="text" name="nombrec" class="input" placeholder="Ingresa tu nombre" required />
 								</div>
 								<div class="group">
-									<label for="pass" class="label">Contraseña</label>
-									<input id="pass" type="password" name="pass" class="input" required placeholder="Ingresa contraseña" required/>
+									<label type="text" class="label">Contraseña</label>
+									<input id="pass" type="password" name="pass" pattern="[A-Za-z0-9_-]{1,15}" class="input" required placeholder="Ingresa contraseña" required/>
 								</div>
 								<div class="group">
-									<label for="mail" class="label">Correo/E-mail</label>
+									<label type="text" class="label">Correo/E-mail</label>
 									<input id="mail" type="text" name="correo" class="input" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"  required placeholder="Ingresa tu E-mail o Correo" required/>
 								</div>
 								<br>

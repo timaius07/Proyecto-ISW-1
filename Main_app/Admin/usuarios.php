@@ -21,7 +21,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-xs-12">
-								<h2>Artículos</h2>
+								<h2>Usuarios</h2>
 							</div>
 						</div>
 					</div>
@@ -30,44 +30,36 @@
 						<div class="col">
 							<div class="col-xs-12">
 								<section id="tipos-repuestos">
-									<h3>Tabla de Artículos</h3>
+									<h3>Tabla de Usuarios</h3>
 									<div class="col-xs-12">									
 										<table class="table table-bordered">
 										<thead>
 											<tr>
 												<td >
-													<a href="articuloagrega.php" class="btn btn-primary" role="button">Agregar Artículos</a>				
+													<a href="./agregaruser.php" class="btn btn-primary" role="button">Agregar Usuarios</a>				
 												</td>
 											</tr>
 											 <tr>
 											    <th>CÓDIGO:</th>
-											    <th>DESCRICIÓN:</th> 
-											    <th>PRECIO:</th>
-											    <th>EXISTENCIA:</th>
-											    <th>FOTO</th>
-											    <th>DEPARTAMENTO</th>
-											    <th>SUCURSAL</th>
+											    <th>NOMBRE:</th> 
+											    <th>CORREO:</th>
 											    <th colspan="2">MANTENIMIENTO</th>
 											  </tr>
 										</thead>
 										<tbody>
 											<?php 
 												include("conexion.php");
-												$query = "SELECT * FROM articulos";
+												$query = "SELECT * FROM login WHERE tipousuario = 'Cliente'";
 												$resultado = mysql_query($query);
 												while ($row = mysql_fetch_assoc($resultado)) {
 											 ?>	
 											 	<tr>
 
-											 		<td><?php echo $row['codigo']; ?></td>
-											 		<td><?php echo $row['descripcion']; ?></td>
-											 		<td><?php echo $row['precio']; ?></td>
-											 		<td><?php echo $row['existencia']; ?></td>
-											 		<td><img height="70px" src="data:image/jpg;base64, <?php echo base64_encode($row['imagen']); ?>"/></td>
-											 		<td><?php echo $row['departamento']; ?></td>
-											 		<td><?php echo $row['sucursal']; ?></td>
-											 		<th><a href="articulomodifica.php?id=<?php echo $row ['id'];?>" class="btn btn-primary" role="button">Modificar</a></th>
-											 		<th><a href="procesoeliminar.php?id=<?php echo $row ['id'];?>" class="btn btn-primary" role="button">Eliminar</a></th>
+											 		<td><?php echo $row['id']; ?></td>
+											 		<td><?php echo $row['nombreu']; ?></td>
+											 		<td><?php echo $row['correou']; ?></td>
+											 		<th><a href="modificaadmin.php?id=<?php echo $row ['id'];?>" class="btn btn-primary" role="button">Modificar</a></th>
+											 		<th><a href="procesoeliminaradmin.php?id=<?php echo $row ['id'];?>" class="btn btn-primary" role="button">Eliminar</a></th>
 											 	</tr>
 											 <?php
 												 }

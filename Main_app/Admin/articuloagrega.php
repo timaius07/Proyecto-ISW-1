@@ -26,18 +26,19 @@
 						</div>
 						<div class="main">
 							<form action='./procesoguardar.php' id="formlg" method="POST" enctype="multipart/form-data">
-			 				   <label class="label">Código</label>
+			 				   <label type="text" class="label">Código</label>
 						       <input name="codigo" type="text" class="form-control" placeholder="Código del Artículo" value="" required/>
-				               <label class="label">Descripción</label>
+				               <label type="text" class="label">Descripción</label>
 				               <input name="descrp" type="text" class="form-control" placeholder="Descripción" value="" required/>
-				               <label class="label">Precio</label>
-				               <input name="precio" type="text" class="form-control" placeholder="Precio" value="" required/>
-				               <label class="label">Existencia</label>
-				               <input name="exist" type="text" class="form-control" placeholder="Existencia" value="" required/>
-				               <label for="pass" class="label">Foto de Artículo</label>
+				               <label type="text" class="label">Precio</label>
+				               <input name="precio" type="text" class="form-control" onkeypress="return valida(event)" placeholder="Precio" value="" required/>
+				               <label type="text" class="label">Existencia</label>
+				               <input name="exist" type="text" class="form-control" onkeypress="return valida(event)" placeholder="Existencia" value="" required/>
+				               <label type="text" class="label">Foto de Artículo</label>
 				               <input type="file" name="Imagen" required="Falta Imagen" />
 				               <div class="group">
-									<label for="tipo" class="label">Departamento</label>
+							   <br>
+							   <label type="text" class="label">Departamento</label>
 									<br>
 									<select class="input" type="button" name="dept">
  										<option>Automovil</option>
@@ -45,9 +46,9 @@
  										<option>Motocicletas</option>
  									</select>
 								</div>
-									
+									<br>
 								<div class="group">
-									<label for="tipo" class="label">Sucursal</label>
+									<label type="text" class="label">Sucursal</label>
 									<br>
 									<select class="input" type="button" name="sucs">
  										<option>San_José</option>
@@ -65,8 +66,8 @@
 				</div>
 			</article>
 	</div>
-
+	<script src="./js/valida.js"></script>
   <?php include '../../inc/footerua.php';?>
-		<?php include '../../inc/footer_common.php';?>
+  <?php include '../../inc/footer_common.php';?>
 </body>
 </html>

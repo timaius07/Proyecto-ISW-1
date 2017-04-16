@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	include './Main_app/serv.php';
+	if(isset($_SESSION['user'])){
+	echo '<script> window.location="index.php"; </script>';
+	}
+?>
 <!DOCTYPE html>
 	<html lang="en">
 	<head>
@@ -5,6 +12,7 @@
 		<?php include 'inc/head_common.php' ; ?>
 		<link rel="stylesheet" href="./css/main.css">
 		<link rel="stylesheet" href="./css/workshops2.css">
+		<link rel="stylesheet" href="./css/style.css">
 		<title>Repuestos</title>
 	</head>
 	<body>
@@ -20,12 +28,15 @@
 							<span>Datos de Ingreso no Válidos, Intente de Nuevo</span>
 						</div>
 						<div class="main">
-							<form action="" id="formlg">
-								<label class="label">Usuario</label>
-								<input type="text" name="usuariolg" pattern="[A-Za-z0-9_-]{1,15}" placeholder="Usuario" required/>
-								<label class="label">Contraseña</label>
+							<form method="post" action="./Main_app/validar.php">
+								<label type="text" class="label">Correo</label>
+								<input type="text" name="usuariolg"  placeholder="ejemplo@gmail.com" required/>
+								<label type="text" class="label">Contraseña</label>
 								<input type="password" name="passlg" pattern="[A-Za-z0-9_-]{1,15}" placeholder="Contraseña" required/>
-								<input type="submit" class="botonlg" value="Iniciar Sesion">
+								<input type="submit" class="botonlg" name="login" value="Iniciar Sesion">
+								<br>
+								<br>
+								<a class="label label-success" href="loggin.php">Registrarse</a>
 							</form>
 						</div>		
 					</div>

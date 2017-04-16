@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <?php include 'inc/head_common.php' ; ?>
  <link rel="stylesheet" href="./css/registro.css">
+ <link rel="stylesheet" href="./css/style.css">
   <title>Inicio de Sessión</title>
   <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans:600'>
 </head>

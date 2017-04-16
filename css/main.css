@@ -1,18 +1,18 @@
 *{
-	margin: 0;
-	padding: 0;
-	outline: 0;
+    margin: 0;
+    padding: 0;
+    outline: 0;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 html{
-	font-family: 'Open Sans', sans-serif;
-	font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
 }
 body{
-	background-image: url('');
-	background-size: cover;
+    background-image: url('');
+    background-size: cover;
 }
 
 input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="number"], textarea {
@@ -21,10 +21,10 @@ input[type="text"], input[type="password"], input[type="email"], input[type="url
     margin: 0 0 15px;
     padding: 10px 1%;
     font-size: 18px;
-	
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
+    
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
 
 input[type="submit"], input[type="button"], input[type="reset"] {
@@ -40,29 +40,29 @@ input[type="submit"], input[type="button"], input[type="reset"] {
     border-radius: 10px;
 }
 input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover {
-	opacity: .8;
+    opacity: .8;
 }
 
-.main input[type="text"], .main input[type="password"] {
-	text-align: center;
-	border:0;
-    padding: 13px;
+.main input[type="text"], .main input[type="password"], .main label[type="text"] {
+    text-align: center;
+    border:0;
+    padding: 10px;
     font-size: 18px;
     color: #000000;   
 }
 .main input[type="submit"] {
     width: 99%;
     margin: 0 auto;
-    padding: 13px 0;
+    padding: 5px 0;
 }
 
 .main{
     width: 30%;
     background-color: rgba(255,255,255,.4);
     text-align: center;
-	border-radius: 5px;
-	margin: 10% auto 0 auto;
-	padding: 3%;
+    border-radius: 5px;
+    margin: 12% auto 0 auto;
+    padding: 2%;
     position: relative;
 }
 

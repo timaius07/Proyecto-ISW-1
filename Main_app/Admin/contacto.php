@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<?php include '../../inc/header.php'; ?>
+<?php include '../../inc/headeradmin.php'; ?>
   <div class="login-wrap"  >
 	<div class="login-html" style="width: 400px; height: 530px;">
 		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Iniciar</label>

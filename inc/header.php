@@ -9,10 +9,11 @@
 				<ul id ="main-menu" class="nav nav-pills hidden-xs">
 				  <li class="active"><a href="index.php">Inicio</a></li>
 				  <li><a href="nosotros.php">Nuestra Empresa</a></li>
-				  <li><a href="detalles.php">Repuestos</a></li>	
-				  <li><a href="contacto.php">Contactenos</a></li>
+				  <li><a href="detalles.php">Nuestros Productos</a></li>	
+				  <li><a href="productos.php">Catálogo</a></li>
+				  <li><a href="carrito.php">Mi Carrito</a></li>
 				  <li><a href="sucursales.php">Sucursales</a></li>
-				  <li><a href="#">Cerrar Sessión</a></li>	
+				  <li><a href="../../logout.php">Cerrar Sessión</a></li>	
 				</ul>
 			</div>
 		</div>	
