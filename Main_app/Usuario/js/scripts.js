@@ -30,9 +30,16 @@ var inicio=function () {
 			if(a=='0'){
 				location.href="./carrito.php";
 			}
-			location.href="./carrito.php";
 		});
-
 	});
-}
+	//se ejecuta la compra por jquery para almacenarla en la BD
+	$("#formulario").submit(function(evento){
+		//alert("se omitio el evento");
+		$.get('./compras/compras.php',function(e){
+			alert("Saldra de la Página para realizar el Pago.");
+		}).fail(function (){
+			evento.preventDefault();	
+		});
+	});
+}	
 $(document).on('ready',inicio);

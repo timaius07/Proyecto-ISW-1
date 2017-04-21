@@ -1,8 +1,6 @@
 <?php
-
+	//guarda los datos del cliente que se registra
 	include("conexionusu.php");
-	
-
 	strtolower($string);
 
 	$nombre=$_POST['nombrec'];

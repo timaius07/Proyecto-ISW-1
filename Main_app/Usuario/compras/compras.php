@@ -14,18 +14,18 @@ include "../conexion.php";
 			$numeroventa=$numeroventa+1;
 		}
 		for($i=0; $i<count($arreglo);$i++){
-			mysql_query("insert into compras (numeroventa,nombre,precio,cantidad,subtotal) values(
+			mysql_query("insert into compras (numeroventa,codigo,nombre,precio,cantidad,subtotal) values(
 				".$numeroventa.",
+				'".$arreglo[$i]['Codigo']."',
 				'".$arreglo[$i]['Nombre']."',	
 				'".$arreglo[$i]['Precio']."',
 				'".$arreglo[$i]['Cantidad']."',
 				'".($arreglo[$i]['Precio']*$arreglo[$i]['Cantidad'])."'
 				)")or die(mysql_error());
 		}
-		$total=0;
-		$tabla =<
+		
 		unset($_SESSION['carrito']);
-		header("location: index.php")
+		header("location: ../index.php")
 		
 
 ?>

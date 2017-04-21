@@ -59,8 +59,8 @@
 											 		<td><?php echo $row['precio']; ?></td>
 											 		<td><?php echo $row['existencia']; ?></td>
 											 		<td><img height="70px" src="data:image/jpg;base64, <?php echo base64_encode($row['imagen']); ?>"/></td>
-											 		<td><?php echo $row['departamento']; ?></td>
-											 		<th><?php echo $row['sucursal']; ?></td>
+											 		<td><?php echo $row['departamento']; ?></td>									 		
+											 		<td><a href="#mapmodals" data-toggle="modal" class="button" role="button"><?php echo $row['sucursal']; ?></a></td>
 											 		<th><a href="carrito.php?id=<?php echo $row ['id'];?>"><img src="../../img/carritorep.jpg"></a></th>
 											 		
 											 	</tr>
@@ -75,9 +75,11 @@
 										</table>				
 									</div>			
 								</section>
+				
 		
-		</article>						
-		
+		</article>
+
+
 		<?php include '../../inc/footerua.php';?>
 		<?php include '../../inc/footer_common.php';?>
 	</body>

@@ -1,35 +1,52 @@
 <?php
-if(isset($_POST['email'])) {
+	
+		$nombre=$_POST['nombrec'];
+		$desde=$_POST['emailc'];
+		$telefono= $_POST['telefonoc'];
+		$mensaje=$_POST['comentarioc'];
+		
+		
 
-// Debes editar las próximas dos líneas de código de acuerdo con tus preferencias
-$email_to = "timaius22@gmail.com";
-$email_subject = "Alguien solicita Información";
-$email_from = $_POST['email'];
+		
+        $fecha=date("d-m-Y");
+        $hora=date("H:i:s");      
+        $asunto='Información de la Web';
+        //Direccion del remitente
+        $correo="timaius22@gmail.com";
+        /*Debe de indicar los estilos css aqui mismo en la variable  y si quieres incluir imagenes,estas tendran que 
+        estar en un servidor yo tome la de google */
+       $comentario='
+        <div style="
+	        border: 1px solid #d6d2d2;
+	        border-radius: 5px;
+	        box-shadow: 5px 5px 10px rgba(57,29,150,0.5);
+	        color:#9378f0;
+	        padding:10px;
+	        width:800px%;
+	        heigth:400px;
+        ">
+        <center>
+        <img src="http://www.mirepuestoya.com.ar/content/industry/images/industry.png" width="400" heigth="250">
+        <h1><em>Alguien solicita información desde la página Web</em></h1></center>
 
-// Aquí se deberían validar los datos ingresados por el usuario
-if(!isset($_POST['first_name']) ||
-!isset($_POST['email']) ||
-!isset($_POST['telephone']) ||
-!isset($_POST['comments'])) {
+            <hr width="90%">
 
-echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
-die();
-}
-
-$email_message = "Detalles del formulario de contacto:\n\n";
-$email_message .= "Nombre: " . $_POST['first_name'] . "\n";
-$email_message .= "E-mail: " . $_POST['email'] . "\n";
-$email_message .= "Teléfono: " . $_POST['telephone'] . "\n";
-$email_message .= "Comentarios: " . $_POST['comments'] . "\n\n";
+            <p>Nombre : '.$nombre.' </p>
+            <p>Correo : '.$desde.'</p>
+          	<p>Teléfono : '.$telefono.'</p>
+			<p>Asunto : '.$mensaje.'</p>
+            ';
 
 
-// Ahora se envía el e-mail usando la función mail() de PHP
-$headers = 'From: '.$email_from."\r\n".
-'Reply-To: '.$email_from."\r\n" .
-'X-Mailer: PHP/' . phpversion();
-@mail($email_to, $email_subject, $email_message, $headers);
+        //para el envío en formato HTML 
+         echo $comentario;
+        $headers = "MIME-Version: 1.0\r\n"; 
+        $headers .= "Content-type: text/html; charset=utf8\r\n"; 
 
-echo "¡El formulario se ha enviado con éxito!";
-}
+        //dirección del remitente 
+        $headers .= "From: Remitente\r\n"; 
+        
+        //FUNCION PARA ENVIAR EL EMAIL
+        mail($correo,$asunto,$comentario,$headers);
+        header("location: ../index.php");
 ?>

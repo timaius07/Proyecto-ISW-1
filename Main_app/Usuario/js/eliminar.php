@@ -5,6 +5,7 @@ session_start();
 		if($arreglo[$i]['Id']!=$_POST['Id']){
 			$datosNuevos[]=array(
 				'Id'=>$arreglo[$i]['Id'],
+				'Codigo'=>$arreglo[$i]['Codigo'],
 				'Nombre'=>$arreglo[$i]['Nombre'],
 				'Precio'=>$arreglo[$i]['Precio'],
 				'Imagen'=>$arreglo[$i]['Imagen'],

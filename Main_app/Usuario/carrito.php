@@ -1,4 +1,5 @@
 <?php  
+	//revisar porque se quiere agregar el codigo del articulo
 	session_start();
 	include "conexion.php";
 	if (isset($_SESSION['carrito'])){
@@ -18,17 +19,20 @@
 						$arreglo[$numero]['Cantidad']=$arreglo[$numero]['Cantidad']+1;
 						$_SESSION['carrito']=$arreglo;
 					}else{
+						$codigo="";
 						$nombre="";
 						$precio=0;
 						$imagen="";
 						$query = "SELECT * FROM articulos WHERE id='$idv' ";
 						$re = mysql_query($query);
 						while ($f=mysql_fetch_assoc($re)) {
+							$codigo=$f['codigo']; 
 							$nombre=$f['descripcion'];
 							$precio=$f['precio'];
 							$imagen=$f['imagen'];
 						}
 						$datosNuevos=array('Id'=>$_GET['id'],
+										'Codigo'=>$codigo,
 										'Nombre'=>$nombre,
 										'Precio'=>$precio,
 										'Imagen'=>$imagen,
@@ -43,17 +47,20 @@
 }else{
 		if(isset($_GET['id'])){
 			$idv = $_GET['id'];
+			$codigo="";
 			$nombre="";
 			$precio=0;
 			$imagen="";
 			$query = "SELECT * FROM articulos WHERE id='$idv'";
 			$re=mysql_query($query);
 			while ($f=mysql_fetch_assoc($re)) {
+				$codigo=$f['codigo'];
 				$nombre=$f['descripcion'];
 				$precio=$f['precio'];
 				$imagen=$f['imagen'];
 			}
 			$arreglo[]=array('Id'=>$_GET['id'],
+							'Codigo'=>$codigo,
 							'Nombre'=>$nombre,
 							'Precio'=>$precio,
 							'Imagen'=>$imagen,
@@ -107,7 +114,8 @@
 								<center>
 									<img height="70px" src="data:image/jpg;base64, <?php echo base64_encode($datos[$i]['Imagen']); ?>"/>
 									<br>
-									<span><?php echo $datos[$i]['Nombre'];?></span><br>
+									<span>Codígo : <?php echo $datos[$i]['Codigo']; ?></span><br>
+									<span><?php echo $datos[$i]['Nombre'];?></span><br>						
 									<span>Precio : <?php echo $datos[$i]['Precio']; ?></span>
 									<br>
 									<span>Cantidad :
@@ -133,13 +141,39 @@
 					}	
 				echo '<center><h2 id="total">Total: '.$total.'</h2></center>';
 				if ($total != 0) {
-						echo '<center><a href="./compras/compras.php"  class="aceptar">Comprar</a></center>;';
-						echo '<center><a href="./compras/cotizar.php"  class="aceptar">Cotizar</a></center>;';
-					}	
-			?>
+						//echo '<center><a href="./compras/compras.php"  class="aceptar">Comprar</a></center>;';
+						echo '<center><a href="./compras/cotizar.php">  <input type=image src="../../img/cotizar1.png" width="200" height="84"></center>;';
+						echo '<script language="javascript">alert("Gracias por cotizar con nosotros" <br>
+												  "La proforma ha sido enviada a su correo");</script>';
+				?>
+				<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" id="formulario">
+					<input type="hidden" name="cmd" value="_cart">
+					<input type="hidden" name="upload" value="1">
+					<input type="hidden" name="business" value="marcocamvar_68-facilitator@hotmail.com">
+					<input type="hidden" name="currency_code" value="CRC">
+					<input type="hidden" name="return" value="http://127.0.0.1/isw/Main_app/Usuario/gracias.php">
+					<?php  
+						for ($i=0; $i < count($datos); $i++) { 
+					?>
+						
+						<input type="hidden" name="item_name_<?php echo $i+1;?>" value="<?php echo $datos[$i]['Nombre'];?>">
+						<input type="hidden" name="amount_<?php echo $i+1;?>" value="<?php echo $datos[$i]['Precio'];?>">
+						<input	type="hidden" name="quantity_<?php echo $i+1;?>" value="<?php echo $datos[$i]['Cantidad'];?>">	
+					<?php 
+						}
+						echo'<center><input type="image" src="../../img/pago1.png" width="200" height="84" name="submit"></center>';
+					 ?>
+					 
+				</form>
+
 					
+						
+				<?php 
+					}	
+				 ?>
 				</section>
-		</article>						
+		</article>
+	
 		<script type="text/javascript" src="../../js/jquery-2.2.4.min.js"></script>
 		<script type="text/javascript" src="./js/scripts.js"></script>
 		<?php include '../../inc/footerua.php';?>
