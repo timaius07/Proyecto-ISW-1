@@ -3,7 +3,7 @@ require 'conexion.php' ;
 
 $usuarios = $mysqli->query("SELECT correou, tipousuario, nombreu 
 		  FROM login
-		  WHERE correou  = '".$_POST['usuario2lg']."' 
+		  WHERE correou  = '".$_POST['usuariolg']."' 
 		  AND contrasenau  = '".$_POST['passlg']."'");
 
 if ($usuarios->num_rows == 1){ 

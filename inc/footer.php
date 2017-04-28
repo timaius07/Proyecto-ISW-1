@@ -18,7 +18,7 @@
 			</div>
 			<div class="clearflix"></div>
 			<div class="col-xs-5">
-				<h3><a href="sucursales.php">Sucursales</a></h3>
+				<h3><a href="sucursales.php">Sucursales Principales</a></h3>
 				
 				<li><a href="https://www.waze.com/livemap?zoom=17&lat=10.3506949&lon=-84.4346537}" target="_blank">San Carlos:</a> Del Hospital de Ciudad Quesada 500 metros al Norte.</li>
 				<li>Teléfono: 24605019</li>

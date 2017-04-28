@@ -9,7 +9,11 @@ if(isset($_SESSION['user'])) {?>
 		<?php include '../../inc/head_common.php' ; ?>
 		<link rel="stylesheet" href="../../css/style.css">
 		<link rel="stylesheet" href="../../css/workshops2.css">
+		<link rel="stylesheet" href="./css/registro.css">
 		<title>Repuestos Usu</title>
+		<link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+   		 <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+   		 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	</head>
 	<body>
 		<?php include '../../inc/header.php'; ?>	

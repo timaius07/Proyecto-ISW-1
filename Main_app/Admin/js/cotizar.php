@@ -1,35 +1,15 @@
 <?php
 session_start();
-//guarda las compras realizadas por el usuario
+//Metodo que envia via correo electronico la cotizacion de la compra que el cliente realiza en la tienda
+
 include "../conexion.php";
-		$arreglo=$_SESSION['carrito'];
-		$exist=0;
-		$exist2=0;
-		$total=0;
-		$codig=0;
-		$re=mysql_query("select codigo,existencia from articulos");		
-		
-		for($i=0; $i<count($arreglo);$i++){
-		while (	$f=mysql_fetch_array($re)) {
-		  $codig=$f['codigo'];
-				if ($arreglo[$i]['Codigo'] == $codig) {
-					$exist= $f['existencia'];
-					$exist2= $arreglo[$i]['Cantidad'];
-					$total = $exist - $exist2; 	
-					mysql_query("UPDATE articulos SET existencia='$total' WHERE codigo = '$codig'")or die(mysql_error());
-				}	
-		}	
-			
-		}
-		
-		//variable de session que contiene el correo del usuario que  hace login
-		$user = $_SESSION['user'];		
-		$total=0;
-			//Seleccionamos el Nombre de la persona que se registro para mostrar
-			$query = "SELECT nombreu, correou FROM login WHERE correou='$user' ";
-			$resultado = mysql_query($query);
-			$row = mysql_fetch_array($resultado);
-							
+		//variable de session que contiene los articulos del carrito de compras
+		$arreglo=$_SESSION['cotiza'];
+		//variables del metodo post con los datos del formulario 
+		$nombrec=$_POST['nombrec'];
+		$desdec=$_POST['emailc'];
+
+		$total=0;							
 								
 		$tabla='<table border="1">
 			<tr>
@@ -53,12 +33,12 @@ include "../conexion.php";
 
 		$tabla=$tabla.'</table>';
 		//echo $tabla;
-		$nombre=$row['nombreu'];
-		$correo=$row['correou'];
+		$nombre=$nombrec;
 		$fecha=date("d-m-Y");
 		$hora=date("H:i:s");
 		$asunto="Compra en MRY Tienda de Repuestos";
 		$desde="www.mry.com";
+		$correo=$desdec;
 		$comentario='
 			<div style="
 				border:1px solid #d6d2d2;
@@ -87,6 +67,7 @@ include "../conexion.php";
 		$headers="MIME-Version: 1.0\r\n";
 		$headers.="Content-type: text/html; charset=utf8\r\n";
 		$headers.="From: Remitente\r\n";
-		mail($correo,$asunto,$comentario,$headers);		
+		mail($correo,$asunto,$comentario,$headers);
+		unset($_SESSION['cotiza']);
+		header("location: ../index.php");
 		
-?>

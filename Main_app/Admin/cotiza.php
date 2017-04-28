@@ -2,11 +2,11 @@
 	//revisar porque se quiere agregar el codigo del articulo
 	session_start();
 	include "conexion.php";
-	if (isset($_SESSION['carrito'])){
+	if (isset($_SESSION['cotiza'])){
 		
 		if(isset($_GET['id'])){
 			$idv = $_GET['id'];
-					$arreglo=$_SESSION['carrito'];
+					$arreglo=$_SESSION['cotiza'];
 					$encontro=false;
 					$numero=0;
 					for($i=0;$i<count($arreglo);$i++){
@@ -16,9 +16,8 @@
 						}
 					}
 					if($encontro==true){
-						//le suma 1 si la al articulo si este se encuentra en el carrito
 						$arreglo[$numero]['Cantidad']=$arreglo[$numero]['Cantidad']+1;
-						$_SESSION['carrito']=$arreglo;
+						$_SESSION['cotiza']=$arreglo;
 					}else{
 						$codigo="";
 						$nombre="";
@@ -40,12 +39,12 @@
 										'Cantidad'=>1);
 
 						array_push($arreglo, $datosNuevos);
-						$_SESSION['carrito']=$arreglo;
+						$_SESSION['cotiza']=$arreglo;
 
 					}
 		}	
 	
-	}else{
+}else{
 		if(isset($_GET['id'])){
 			$idv = $_GET['id'];
 			$codigo="";
@@ -66,7 +65,7 @@
 							'Precio'=>$precio,
 							'Imagen'=>$imagen,
 							'Cantidad'=>1);
-			$_SESSION['carrito']=$arreglo;
+			$_SESSION['cotiza']=$arreglo;
 		}
 	}
 ?>
@@ -81,7 +80,7 @@
 	</head>
 
 	<body>
-		<?php include '../../inc/header.php'; ?>
+		<?php include '../../inc/headeradmin.php'; ?>
 		<!--detail cambia los estilos workshop w1 cambia todo-->
 		
 		<link rel="stylesheet" href="../../css/style.css">
@@ -98,17 +97,18 @@
 							<div class="col-xs-12 main-info">
 								<div class="section-content">
 								<h1 class="section-header">Su Carrito de Compras <span class="content-header wow fadeIn " data-wow-delay="0.2s" 	data-wow-duration="2s"> Repuestos MRY</span></h1>
-								<h3>Revise en el Cátalogo los articulos que desea comprar.</h3>
+								<h3>Revise en el Cátalogo los articulos que desea cotizar.</h3>
 							</div>
 						</div>
 						</div>
 					</div>
 		</header>
+			<br>
 				<section id="tipos-repuestos">
 					<?php 
 					$total=0;
-					if (isset($_SESSION['carrito'])){
-						$datos = $_SESSION['carrito'];
+					if (isset($_SESSION['cotiza'])){
+						$datos = $_SESSION['cotiza'];
 						$total=0;
 						$total=0;
 						for ($i=0; $i <count($datos) ; $i++) { 
@@ -127,8 +127,8 @@
 										data-id="<?php echo $datos[$i]['Id']; ?>"
 										class="cantidad"
 										>
-									</span> 
 
+									</span> 
 									<br>
 									<span class="subtotal">Subtotal : <?php echo $datos[$i]['Cantidad']* $datos[$i]['Precio'];  ?></span>
 									<br>
@@ -138,41 +138,44 @@
 						
 				<?php	
 					$total=($datos[$i]['Cantidad']*$datos[$i]['Precio'])+$total;
-					
 				}	
 					}else{
 						echo '<center><h2> El carrito de Compras esta Vacio</h2></center>';
 					}	
 				echo '<center><h2 id="total">Total: '.$total.'</h2></center>';
 				if ($total != 0) {
-						//echo '<center><a href="./compras/compras.php"  class="aceptar">Comprar</a></center>;';
-						echo '<center><a href="./compras/cotizar.php"><input type=image src="../../img/cotizar1.png" width="200" height="84"></a></center>;';
+						echo '<center><a href="./js/cotizar.php"><input type=image src="../../img/cotizar1.png" width="200" height="84"></a></center>;';
 
 				?>
-				<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" id="formulario">
-					<input type="hidden" name="cmd" value="_cart">
-					<input type="hidden" name="upload" value="1">
-					<input type="hidden" name="business" value="marcocamvar_68-facilitator@hotmail.com">
-					<input type="hidden" name="currency_code" value="CRC">
-					<?php  
-						for ($i=0; $i < count($datos); $i++) { 
-					?>
-						<input type="hidden" name="item_name_<?php echo $i+1;?>" value="<?php echo $datos[$i]['Nombre'];?>">
-						<input type="hidden" name="amount_<?php echo $i+1;?>" value="<?php echo $datos[$i]['Precio'];?>">
-						<input	type="hidden" name="quantity_<?php echo $i+1;?>" value="<?php echo $datos[$i]['Cantidad'];?>">	
-					<?php 
-						}
-						echo'<center><input type="image" src="../../img/pago1.png" width="200" height="84" name="submit"></center>';
-					 ?>	 
+						<div class="contact-section">
+			<div class="container">
+				<form action='./js/cotizar.php' method="post">
+					<div class="col-md-12 form-line">
+			  			<div class="form-group">
+			  				<span class="glyphicon glyphicon-user"></span>
+			  				<label for="nombre">Nombre del Cliente:</label>
+							<input id="user" type="text" name="nombrec" class="form-control" maxlength="50" placeholder="Ingrese el Nombre" />
+				  		</div>
+				  		<div class="form-group">
+				  			<span class="glyphicon glyphicon-envelope"></span>
+				  			<label for="mail">Correo/E-mail Cliente</label>
+							<input id="mail" name="emailc" type="text" maxlength="80" class="form-control" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" placeholder="Ingrese el Correo" required/>	
+ 				    	</div>	
+			  		</div>
+			  		<div class="col-md-6">
+			  			<div>
+			  				<button type="submit" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>Enviar Cotización</button>
+			  				<br>
+			  				<br>
+			  			</div>
+					</div>
 				</form>
-
-					
-						
-				<?php 
+			</div>	
+			</div>
+			<?php 
 					}	
 				 ?>
-				 
-				</section>
+		</section>
 		</article>						
 		<script type="text/javascript" src="../../js/jquery-2.2.4.min.js"></script>
 		<script type="text/javascript" src="./js/scripts.js"></script>

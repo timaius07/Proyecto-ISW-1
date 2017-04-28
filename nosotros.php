@@ -5,6 +5,10 @@
 		<title>Detalles</title>
 		<?php include 'inc/head_common.php';?>
 		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="./css/registro.css">
+	    <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+   		<link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+
 	</head>
 
 	<body>
@@ -16,7 +20,12 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-xs-12">
-								<h2>Nosotros</h2>
+								<div class="section-content">
+									<h1 class="section-header">Nuestra Empresa <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Repuestos MRY</span></h1>
+								<br>
+									<h3>Somos una Empresa Familiar.</h3>
+								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -25,7 +34,7 @@
 						<div class="col">
 							<div class="col-xs-12">
 								<section id="tipos-repuestos">
-									<h3>Somos una Empresa Familiar:</h3>
+									
 									<div class="historia col">
 									<div class="col-xs-4" >
 											<img src="img/quienes.png"  alt=" Repuestos">

@@ -4,14 +4,13 @@
 	$id=$_REQUEST['id'];
 	$nombre=$_POST['nombrec'];
 	$contrasena=$_POST['pass'];
-	$correo=$_POST['correo'];
 
-	$query= "UPDATE login SET nombreu='$nombre', contrasenau='$contrasena', correou= '$correo' 
+	$query= "UPDATE login SET nombreu='$nombre', contrasenau='$contrasena' 
 			 WHERE id='$id'";
 	$resultado = mysql_query($query);
 
 	if ($resultado) {
-		header("Location: administradores.php");
+		echo "<script type =\"text/javascript\"> history.go(-2);</script>";
 	}else {
 		echo "No se inserto";
 	}

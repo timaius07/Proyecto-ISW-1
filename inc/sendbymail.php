@@ -1,20 +1,19 @@
 <?php
-	
+	//metodo utilizado para enviar correo electronico al cliente
+    //datos del formulario contacto
 		$nombre=$_POST['nombrec'];
 		$desde=$_POST['emailc'];
 		$telefono= $_POST['telefonoc'];
 		$mensaje=$_POST['comentarioc'];
-		
+		$provincia= $_POST['provincia'];
 		
 
-		
+		//datos adicionales al correo
         $fecha=date("d-m-Y");
         $hora=date("H:i:s");      
         $asunto='Información de la Web';
         //Direccion del remitente
         $correo="timaius22@gmail.com";
-        /*Debe de indicar los estilos css aqui mismo en la variable  y si quieres incluir imagenes,estas tendran que 
-        estar en un servidor yo tome la de google */
        $comentario='
         <div style="
 	        border: 1px solid #d6d2d2;
@@ -33,6 +32,7 @@
 
             <p>Nombre : '.$nombre.' </p>
             <p>Correo : '.$desde.'</p>
+            <p>Provincia : '.$provincia.'</p>
           	<p>Teléfono : '.$telefono.'</p>
 			<p>Asunto : '.$mensaje.'</p>
             ';

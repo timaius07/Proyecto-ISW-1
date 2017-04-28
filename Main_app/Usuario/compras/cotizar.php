@@ -39,9 +39,9 @@ include "../conexion.php";
 		$nombre=$row['nombreu'];
 		$fecha=date("d-m-Y");
 		$hora=date("H:i:s");
-		$asunto="Cotizacion en MRY Tienda de Repuestos";
+		$asunto="Cotización en MRY Tienda de Repuestos";
 		$desde="www.mry.com";
-		$correo="timaius22@gmail.com";
+		$correo=$row['correou'];
 		$comentario='
 			<div style="
 				border:1px solid #d6d2d2;
@@ -52,9 +52,9 @@ include "../conexion.php";
 			">
 			<center>
 				<img src="https://pbs.twimg.com/profile_images/493504264220602369/kBVjqWby_400x400.png" width="300px" heigth="250px">
-				<h1>Muchas gracias por comprar en mi carrito de compras</h1>
+				<h1>Muchas gracias por cotizar en mi carrito de compras</h1>
 			</center>
-			<p>Hola '.$nombre.' muchas gracias por Cotizar a continuación te mostramos una lista que contiene los productos que deseabas cotizar</p>
+			<p>Hola '.$nombre.' muchas gracias por cotizar a continuación te mostramos una lista que contiene los productos que deseabas cotizar</p>
 			<center>
 			<p>Lista de Artículos<br>
 				'.$tabla.'
@@ -71,6 +71,6 @@ include "../conexion.php";
 		$headers.="Content-type: text/html; charset=utf8\r\n";
 		$headers.="From: Remitente\r\n";
 		mail($correo,$asunto,$comentario,$headers);
-		unset($_SESSION['carrito']); 
+		unset($_SESSION['carrito']);
 		header("location: ../index.php");
-		?>
+		

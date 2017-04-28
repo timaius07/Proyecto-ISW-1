@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col-xs-12 main-info">
                             <div class="section-content">
-                                <h1 class="section-header">Módulo Modifica Administrador<span class="content-header wow fadeIn " data-wow-delay="0.2s"    data-wow-duration="2s"> Repuestos MRY</span></h1>
+                                <h1 class="section-header">Módulo Modifica Usuario<span class="content-header wow fadeIn " data-wow-delay="0.2s"    data-wow-duration="2s"> Repuestos MRY</span></h1>
                             </div>
                         </div>
                         <div class="error">
@@ -55,7 +55,7 @@
                                     <label type="text" class="label">Tipo Usuario</label>
                                     <br>     
                                     <select class="input" name="tipou">
-                                    <option>Administrador</option>
+                                    <option>Cliente</option>
                                     </select>
 
                                 </div>

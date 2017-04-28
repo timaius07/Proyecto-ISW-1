@@ -10,26 +10,20 @@
 		<?php include '../../inc/header.php'; ?>
 		<!--detail cambia los estilos workshop w1 cambia todo-->
 		<link rel="stylesheet" href="../../css/style.css">
+		<link rel="stylesheet" href="../../css/registro.css">
+		<link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+   		 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<header>
 			<!--Cabecera de la pagina repuesto, imagen de menu-->
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-12">
-								<h2><b><u> Su Repuesto Ya  </u></b>tiene Sucursales en todo el País</h2>
-						</div>
-					</div>
-				</div>
 					<div class="container">
 						<div class="col">
-							<div class="col-xs-12">
-								<section id="tipos-repuestos">
-									<h3>Conozca nuestras direcciones y Teléfonos:</h3>
-									<div class="tiprepuestos col">
-										<div class="col-xs-4">
-								
-										</div>
-								</section>
+							<div class="col-xs-12 main-info">
+								<div class="section-content">
+								<h1 class="section-header">Sucursales de  <span class="content-header wow fadeIn " data-wow-delay="0.2s" 	data-wow-duration="2s"> Repuestos MRY</span></h1>
+								<h3>Presione en la ubicacion de la Sucursal para obtener mas información.</h3>
 							</div>
+						</div>
 						</div>
 					</div>
 		</header>

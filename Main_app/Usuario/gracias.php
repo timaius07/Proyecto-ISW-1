@@ -4,32 +4,26 @@
 		<meta charset="UTF-8">
 		<title>Sucursales</title>
 		<?php include '../../inc/head_common.php';?>
-		<link rel="stylesheet" href="../../css/style.css">
 	</head>
 
 	<body>
 		<?php include '../../inc/header.php'; ?>
 		<!--detail cambia los estilos workshop w1 cambia todo-->
+		<link rel="stylesheet" href="../../css/style.css">
+		<link rel="stylesheet" href="../../css/registro.css">
+		<link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
+   		 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<header>
 			<!--Cabecera de la pagina repuesto, imagen de menu-->
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-12">
-								<h2><b><u> Su Repuesto Ya  </u></b>le agradece por confiar en nuestra tienda</h2>
-						</div>
-					</div>
-				</div>
 					<div class="container">
 						<div class="col">
-							<div class="col-xs-12">
-								<section id="tipos-repuestos">
-									<h3>Seguir Comprando</h3>
-									<div class="tiprepuestos col">
-										<div class="col-xs-4">
-											
-										</div>
-								</section>
+							<div class="col-xs-12 main-info">
+								<div class="section-content">
+								<h1 class="section-header">Gracias por tu compra en <span class="content-header wow fadeIn " data-wow-delay="0.2s" 	data-wow-duration="2s"> Repuestos MRY</span></h1>
+								<h3>Una copia del pedido a sido enviada a tu correo.</h3>
 							</div>
+						</div>
 						</div>
 					</div>
 		</header>
@@ -38,16 +32,14 @@
 				<div class="panel panel-default">
   					<div class="panel-body">
  						<div class="col-xs-12" style="width: 98%; height: 440px;">
-							<div class="col-xs-12">
-  								<center><img src="../../img/compra.jpg" height="415px" width= "100%"></center>
-    						</div>
+							<center><img src="./img/gracias.jpg" height="435px"></center>
     					</div>
  					</div>		
 				</div>		
 		</article>					
 							
 								
-		
+		<?php unset($_SESSION['carrito']); ?>
 		<?php include '../../inc/footerua.php';?>
 		<?php include '../../inc/footer_common.php';?>
 	</body>

@@ -4,7 +4,9 @@
 		<meta charset="UTF-8">
 		<title>Mantenimiento Articulos</title>
 		<?php include '../../inc/head_common.php';?>
-		
+		<link rel="stylesheet" href="../../css/registro.css">
+		<link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
+   		 <link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
 
 	</head>
 
@@ -16,12 +18,16 @@
 		<link rel="stylesheet" href="../../css/style.css">
 		<article id="w1-detail" class="detail">
 				<header>
-				<!--Cabecera de la pagina, imagen de menu-->
-				
+				<!--Cabecera de la pagina repuesto, imagen de menu-->
 					<div class="container">
 						<div class="row">
 							<div class="col-xs-12">
-								<h2>Artículos</h2>
+								<div class="section-content">
+									<h1 class="section-header">Mantenimiento de Artículos<span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Repuestos MRY</span></h1>
+								<br>
+									<h3>Tabla de Productos.</h3>
+								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -30,13 +36,12 @@
 						<div class="col">
 							<div class="col-xs-12">
 								<section id="tipos-repuestos">
-									<h3>Tabla de Artículos</h3>
 									<div class="col-xs-12">									
 										<table class="table table-bordered">
 										<thead>
 											<tr>
 												<td >
-													<a href="articuloagrega.php" class="btn btn-primary" role="button">Agregar Artículos</a>				
+													<a href="articuloagrega.php" class="btn btn-success" role="button">Agregar Artículos</a>				
 												</td>
 											</tr>
 											 <tr>
@@ -66,8 +71,8 @@
 											 		<td><img height="70px" src="data:image/jpg;base64, <?php echo base64_encode($row['imagen']); ?>"/></td>
 											 		<td><?php echo $row['departamento']; ?></td>
 											 		<td><?php echo $row['sucursal']; ?></td>
-											 		<th><a href="articulomodifica.php?id=<?php echo $row ['id'];?>" class="btn btn-primary" role="button">Modificar</a></th>
-											 		<th><a href="procesoeliminar.php?id=<?php echo $row ['id'];?>" class="btn btn-primary" role="button">Eliminar</a></th>
+											 		<th><a href="articulomodifica.php?id=<?php echo $row ['id'];?>" class="btn btn-warning" role="button">Modificar</a></th>
+											 		<th><a href="procesoeliminar.php?id=<?php echo $row ['id'];?>" class="btn btn-danger" role="button">Eliminar</a></th>
 											 	</tr>
 											 <?php
 												 }
